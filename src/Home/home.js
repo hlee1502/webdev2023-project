@@ -6,6 +6,7 @@ import './home.css';
 import SmallLibrary from "./smlibrary.js";
 import { useEffect, useState } from "react";
 import * as client from "../Users/client.js";
+import PartnersList from "./partnerslist.js";
 
 function Home() {
     const [user, setUser] = useState(null);
@@ -30,7 +31,8 @@ function Home() {
             <NavBar/>
             <IntroImage user={user} />
             <div>
-                <PartnersList />
+            <PartnersList />
+
             </div>
         </div>
     );

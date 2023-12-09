@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
 import NavBar from "../../NavBar/navbar.js";
-import * as client from "../client";
-import { useNavigate } from "react-router-dom";
-import './profile.css'
+import * as client from "../client.js";
+import { useNavigate, Link } from "react-router-dom";
+import './profile.css';
 
 function Profile() {
-    const [user, setUser] = useState({
-        username: '',
-        password: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        dob: '',
-        role: 'PERSONAL',
-    });
+    const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,12 +14,9 @@ function Profile() {
                 const userData = await client.account();
                 if (userData) {
                     setUser(userData);
-                } else {
-                    navigate("/login");
                 }
             } catch (error) {
                 console.error("Error fetching user data:", error);
-                navigate("/login");
             }
         };
 
@@ -38,12 +27,43 @@ function Profile() {
         setUser({ ...user, [e.target.name]: e.target.value });
     };
 
+    const handleUpdate = async () => {
+        try {
+            await client.updateUser(user);
+            alert("Profile updated successfully!");
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert("Failed to update profile.");
+        }
+    };
+
+    const handleSignOut = async () => {
+        try {
+            await client.signout();
+            navigate("/");
+        } catch (error) {
+            console.error("Error signing out:", error);
+        }
+    };
+
+    const handleDelete = async () => {
+        if (window.confirm("Are you sure you want to delete your profile? This action cannot be undone.")) {
+            try {
+                await client.deleteUser(user);
+                await handleSignOut(); 
+            } catch (error) {
+                console.error("Error deleting profile:", error);
+                alert("Failed to delete profile.");
+            }
+        }
+    };
+
     return (
         <div>
             <NavBar />
             <div className="profile-page">
                 {user ? (
-                    <div className="form-container">
+                    <div>
                         <h1>{user.username}'s Profile</h1>
                         <form>
                         <div className="mb-3">
@@ -78,9 +98,9 @@ function Profile() {
                             </select>
                         </div>                
                         <div className="profile-buttons">
-                            <button className="btn btn-update mb-2" onClick={handleUpdate}>Update Profile</button>
-                            <button className="btn btn-signout mb-2" onClick={handleSignOut}>Sign Out</button>
-                            <button className="btn btn-delete" onClick={handleDelete}>Delete Account</button>
+                            <button className="btn btn-update" onClick={handleUpdate}>Update Profile</button>
+                            <button className="btn btn-signout" onClick={handleSignOut}>Sign Out</button>
+                            <button className="btn btn-delete" onClick={handleDelete}>Delete User</button>
                         </div>
                     </form>
     
