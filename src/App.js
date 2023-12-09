@@ -12,6 +12,8 @@ import SearchResults from './SearchResults/searchResults';
 import Register from './Users/Register/register';
 import Account from './Users/Account/account';
 import Details from './Details/details';
+import PublicProfile from './Users/Profile/publicProfile.js';
+import MyExercises from './MyExercises/myExercises';
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route path="/Register/*" element={<Register/>}/>
           <Route path="/Account/*" element={<Account/>}/>
           <Route path="/Details/:name" element={<Details/>}/>
+          <Route path="/Profile/:profileId" element={<PublicProfile />} />
+          <Route path="/MyExercises/*" element={<MyExercises/>}/>
+
         </Routes>
       </div>
     </HashRouter>

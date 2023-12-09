@@ -3,6 +3,8 @@ import NavBar from "../NavBar/navbar.js"
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 import "./details.css";
 
 function Details() {
@@ -34,30 +36,39 @@ function Details() {
       fetchDetails();
     }, [name]);
 
-    return (
-        <div>
-            <NavBar/>
-            <div className="wd-deatils-results">
-                {exercise ? (
-                <div className="wd-exercise-detail-page">
-                    <div className="mt-4 mb-3">
-                        <h3>{exercise.name}</h3>
-                        <hr className="details-divider"/>
-                    </div>
-                    <div className="wd-exercise-info"> 
-                        <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
-                        <p><span className="wd-info-category">Muscle: </span>{exercise.muscle}</p>
-                        <p><span className="wd-info-category">Equipment: </span>{exercise.equipment}</p>
-                        <p><span className="wd-info-category">Difficulty: </span>{exercise.difficulty}</p>
-                        <p><span className="wd-info-category">Instructions: </span>{exercise.instructions}</p>
-                    </div>
+  return (
+    <div>
+      <NavBar/>
+      <div className="wd-deatils-results">
+        {exercise ? (
+          <div className="wd-exercise-detail-page">
+            <div className="mt-4 mb-3">
+              <h3>{exercise.name}</h3>
+              <hr className="details-divider"/>
+            </div>
+            <div className="wd-exercise-info"> 
+              <div className="row">
+                <div className="col-10">
+                  <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
                 </div>
-                ) : (
-                <p>Loading exercise details...</p>
-                )}
-            </div>            
-        </div>
-      );
+                <div className="col-2 details-like-button">
+                  <button className='btn btn-outline-secondary'>
+                    <FaRegHeart/>
+                  </button>
+                </div>
+              </div>
+              <p><span className="wd-info-category">Muscle: </span>{exercise.muscle}</p>
+              <p><span className="wd-info-category">Equipment: </span>{exercise.equipment}</p>
+              <p><span className="wd-info-category">Difficulty: </span>{exercise.difficulty}</p>
+              <p><span className="wd-info-category">Instructions: </span>{exercise.instructions}</p>
+            </div> 
+          </div>
+          ) : (
+          <p>Loading exercise details...</p>
+        )}
+      </div>            
+    </div>
+  );
 }
 
 export default Details;

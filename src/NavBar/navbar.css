@@ -40,6 +40,14 @@
     border-bottom-right-radius: 0;
 }
 
+.wd-home-end {
+    flex-direction: row;
+}
+
+.wd-home-end .btn {
+    width: min-content;
+}
+
 .wd-home-end .btn-primary {
     --bs-btn-bg: rgba(49, 121, 165, 0.641);
     --bs-btn-border-color: rgba(49, 121, 165, 0.641);
@@ -50,6 +58,7 @@
     --bs-btn-disabled-bg: rgba(49, 121, 165, 0.641);
     --bs-btn-disabled-border-color: rgba(49, 121, 165, 0.641);
     --bs-btn-color: white;
+
 }
 
 .wd-navbar .btn-primary {

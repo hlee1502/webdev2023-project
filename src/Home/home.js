@@ -29,7 +29,8 @@ function Home() {
         <div>
             <NavBar/>
             <IntroImage user={user} />
-            <div className="wd-home-content">
+            <div>
+                <PartnersList />
             </div>
         </div>
     );

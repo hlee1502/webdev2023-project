@@ -4,10 +4,9 @@
     justify-content: left;
     align-items: left;
     color: white; 
-    font-size: 60px; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    padding-left: 125px;
-    padding-top: 100px;
+    padding-left: 5%;
+    padding-top: 8%;
 }
 
 .wd-image-title {
@@ -17,7 +16,6 @@
 
 .wd-image-content {
     width: max-content;
-    padding: 10px;
     backdrop-filter: blur(2px);
     border-radius: 20px;
 }

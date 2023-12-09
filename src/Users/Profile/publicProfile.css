@@ -1,0 +1,57 @@
+.public-profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.public-profile-page h1 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.public-profile-content {
+    border: 1px solid #ddd;
+    padding: 3%;
+    border-radius: 8px;
+    width: 35%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left
+    ;
+}
+
+.public-profile-info {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2%;
+}
+
+.public-profile-info-title {
+    font-weight: bold;
+    color: rgb(49, 121, 165);
+    margin-right: 2%;
+}
+
+.email-button-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.email-button {
+    display: inline-block;
+    padding: 2% 4%;
+    margin-top: 4%;
+    background-color: rgb(49, 121, 165);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.email-button:hover {
+    background-color: rgba(49, 121, 165, 0.9);
+}

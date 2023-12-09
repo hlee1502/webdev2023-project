@@ -1,0 +1,54 @@
+.partners-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.partner-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 1%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+    cursor: pointer; 
+}
+
+.partner-card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 3%;
+    color: rgb(49, 121, 165);
+}
+
+.card-body {
+    color: #333;
+    font-size: 1rem;
+}
+
+.card-email {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 3%;
+}
+
+.partners-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.header-home {
+    border-top: 2px solid;
+    color: rgb(49, 121, 165);
+    margin: 0 auto; 
+    width: 5%; 
+    opacity: 1;
+}

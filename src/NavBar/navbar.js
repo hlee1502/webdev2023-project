@@ -31,6 +31,9 @@ function NavBar() {
                                 <Link to="/Home" className={`nav-link ${pathname.includes("/Home") ? "active" : ""}`}>Home</Link>
                             </li>
                             <li className="nav-item">
+                                <Link to="/MyExercises" className={`nav-link ${pathname.includes("/MyExercises") ? "active" : ""}`}>My Exercises</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to="/Profile" className={`nav-link ${pathname.includes("/Profile") ? "active" : ""}`}>Profile</Link>
                             </li>
                             <li className="nav-item">
@@ -40,9 +43,9 @@ function NavBar() {
                     </div>
                     <div className="wd-home-end d-flex justify-content-end">
                         <div className="input-group">
-                        <div className="form-outline">
-                            <input type="search" id="searchBar" className="wd-search-bar form-control" placeholder="search exercises..."/>
-                        </div>
+                            <div className="form-outline">
+                                <input type="search" id="searchBar" className="wd-search-bar form-control" placeholder="search exercises..."/>
+                            </div>
                             <button type="button" className="btn btn-primary d-flex align-items-center" onClick={handleSearch}><LuSearch/></button>
                         </div>
                     </div>

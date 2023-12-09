@@ -8,6 +8,16 @@ export const BASE_API = process.env.REACT_APP_BASE_API_URL;
 //export const USERS_API = `${BASE_API}/api/users`;
 
 export const USERS_API = "http://localhost:4000/api/users";
+export const EXERCISE_API = "http://localhost:4000/api/exercises";
+
+export const searchExercise = async (query) => {
+    try {
+        const response = await request.post(`${EXERCISE_API}`, query)
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+}
 
 export const signin = async (credentials) => {
     try {

@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import NavBar from "../NavBar/navbar.js"
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
+import * as client from "../Users/client.js";
 import './searchResults.css';
 
 const determineSearchParam = (query) => {
@@ -26,24 +27,20 @@ function SearchResults() {
   const [results, setResults] = useState([]);
   const [isLiked, setLiked] = useState(false);
   const { query } = useParams(); 
-
-  const handleLike = () => {
-    setLiked(!isLiked);
-  };
-
+  
   useEffect(() => {
     const searchParam = determineSearchParam(query);
     const fetchData = async () => {
       try {
-        const externalResponse = await axios.get(`https://api.api-ninjas.com/v1/exercises?${searchParam}`, {
-          headers: { 'X-Api-Key': 'KdvVT7cA9sb4lgiqZy486w==qE7bwMX1zhQRnSmt' }
-        });
+          const externalResponse = await axios.get(`https://api.api-ninjas.com/v1/exercises?${searchParam}`, {
+            headers: { 'X-Api-Key': 'KdvVT7cA9sb4lgiqZy486w==qE7bwMX1zhQRnSmt' }
+          });
 
-        const localResponse = await axios.post('http://localhost:4000/api/exercises', {name: query});
+          const localResponse = await axios.post('http://localhost:4000/api/exercises', {name: query});
 
-        setResults([...externalResponse.data, ...localResponse.data]);
+          setResults([...externalResponse.data, ...localResponse.data]);
       } catch (error) {
-        console.error('Error fetching data:', error);
+          console.error('Error fetching data:', error);
       }
     };
 
@@ -75,9 +72,9 @@ function SearchResults() {
                         </li>
                     </Link>
                   </div>
-                  <div className='col-2'>
+                  <div className='col-2 like-button'>
                     <button className='btn btn-outline-secondary'>
-                      <FaHeart/>
+                      <FaRegHeart/>
                     </button>
                   </div>
                 </div>

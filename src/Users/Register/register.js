@@ -29,7 +29,7 @@ function Register() {
                 <div className="wd-form-border">
                     <h3>Register</h3>
                     {error && <div>{error}</div>}
-                    <div className="wd-signup-content mt-3">
+                    <div className="wd-signup-content mt-4">
                         <div className="form-container">
                             <div className="form-floating mb-3">
                                 <input id="username" 
@@ -54,7 +54,7 @@ function Register() {
                                 <label for="password">Password</label>
                             </div>
                         </div>  
-                        <button className="btn btn-primary btn-lg" onClick={signup}>Signup</button> 
+                        <button className="btn btn-primary btn-lg mb-3" onClick={signup}>Signup</button> 
                     </div>
                 </div>
             </div>
