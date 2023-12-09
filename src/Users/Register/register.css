@@ -1,0 +1,38 @@
+.wd-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%; 
+}
+
+.wd-signup .btn-primary {
+    --bs-btn-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-hover-bg: rgb(49, 121, 165);
+    --bs-btn-hover-border-color: rgb(49, 121, 165);
+    --bs-btn-active-bg: rgb(49, 121, 165);
+    --bs-btn-active-border-color: rgb(49, 121, 165);
+    --bs-btn-disabled-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-disabled-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-color: white;
+    width: 100%;
+}
+
+.wd-signup .wd-form-border {
+    border: 1px solid #ddd;
+    padding: 40px 50px 30px;
+    border-radius: 8px; 
+    width: 500px;
+    margin-top: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.wd-signup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

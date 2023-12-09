@@ -1,0 +1,14 @@
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-edit-form {
+    border: 1px solid rgb(49, 121, 165, 0.641);
+    padding: 40px 50px 30px;
+    border-radius: 8px; 
+    width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}

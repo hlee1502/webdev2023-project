@@ -1,0 +1,94 @@
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  margin: 10px;
+  height: 290px;
+}
+
+.result-link {
+  text-decoration: none!important;
+  color: black;
+}
+
+.exercise-name {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.exercise-instructions {
+  color: #666;
+  font-size: 14px;
+}
+
+.header-divider {
+  border-top: 2px solid; 
+  color: rgb(49, 121, 165);
+  margin: 0 auto; 
+  margin-bottom: 15px;
+  margin-right: 96%;
+  opacity: 1;
+}
+
+.results-divider {
+border-top: 2px solid; 
+color: rgb(49, 121, 165, 0.641);
+margin: 0 auto; 
+margin-right: 90%;
+margin-top: 15px;
+opacity: 1;
+}
+
+.search-results{
+padding-left: 2.5%;
+padding-right: 2.5%;
+}
+
+.no-results-message {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid rgb(49, 121, 165, 0.641);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-results-message p {
+  margin: 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.no-results-message ul {
+  list-style-type: disc;
+  margin: 10px 20px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.no-results-message li {
+  margin-bottom: 5px;
+}
+  
+.results-container .list-group {
+  --bs-list-group-border-color: none;
+  width: 45%;
+}
+
+.wd-exercise-name {
+  font-size: 1.3em;
+  text-decoration: underline;
+}
+
+.wd-exercise-description {
+  font-size: 0.9em;
+}

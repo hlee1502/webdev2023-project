@@ -1,0 +1,93 @@
+.wd-navbar {
+    --bs-navbar-nav-link-padding-x: 1.5rem;
+    font-size: 1.05rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.wd-navbar .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.wd-navbar .navbar-nav .nav-link:hover {
+    font-size: 1.05rem;
+    text-decoration: underline;
+}
+
+.wd-navbar .navbar-nav .nav-link.active {
+    font-size: 1.05rem;
+    color: white;
+    background-color: rgba(49, 121, 165, 0.641);
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.wd-navbar .wd-nav-padding {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.wd-navbar .wd-search-bar {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.wd-search-bar {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.wd-home-end .btn-primary {
+    --bs-btn-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-hover-bg: rgb(49, 121, 165);
+    --bs-btn-hover-border-color: rgb(49, 121, 165);
+    --bs-btn-active-bg: rgb(49, 121, 165);
+    --bs-btn-active-border-color: rgb(49, 121, 165);
+    --bs-btn-disabled-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-disabled-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-color: white;
+}
+
+.wd-navbar .btn-primary {
+    --bs-btn-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-hover-bg: rgb(49, 121, 165);
+    --bs-btn-hover-border-color: rgb(49, 121, 165);
+    --bs-btn-active-bg: rgb(49, 121, 165);
+    --bs-btn-active-border-color: rgb(49, 121, 165);
+    --bs-btn-disabled-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-disabled-border-color: rgba(49, 121, 165, 0.641);
+    --bs-btn-color: white;
+}
+
+.wd-title {
+    font-size: 1.8rem;
+    font-family: 'Courier New', monospace;
+}
+
+.wd-login-button .btn {
+    --bs-btn-padding-x: 0.55rem;
+    --bs-btn-padding-y: 0.175rem;
+    --bs-btn-font-size: 0.95rem;
+    margin-left: 10px;
+    color: black;
+}
+
+.wd-profile-button .btn {
+    --bs-btn-padding-x: 0.55rem;
+    --bs-btn-padding-y: 0.175rem;
+    --bs-btn-font-size: 0.95rem;
+    color: black;
+}
+
+.wd-user-icon {
+    padding: 0;
+}
+
+.wd-tabs {
+    padding-left: 11%;
+}

@@ -1,0 +1,31 @@
+.wd-deatils-results {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.wd-exercise-detail-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wd-exercise-info {
+    border: 1px solid rgb(49, 121, 165, 0.641);
+    padding: 50px;
+    border-radius: 8px; 
+    width: 700px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.wd-info-category {
+    font-weight: bold;
+}
+
+.details-divider {
+    border-top: 2px solid; 
+    color: rgb(49, 121, 165);
+    margin: auto; 
+    opacity: 1;  
+    width: 20%;
+}

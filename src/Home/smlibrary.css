@@ -1,0 +1,42 @@
+.wd-home-library {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.wd-home-library .btn {
+    margin-right: 10px;
+}
+
+.wd-home-library .card {
+    height: 20rem;
+    width: 16rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.wd-home-library .wd-card-img {
+    height: 13rem;
+}
+
+.wd-home-library .header-divider {
+    border-top: 2px solid; 
+    color: rgb(49, 121, 165);
+    margin: 0 auto; 
+    margin-bottom: 15px;
+    margin-right: 96%;
+    opacity: 1;
+}
+
+.wd-home-library .btn-outline-secondary {
+    margin-bottom: 15px; 
+    --bs-btn-color: black;
+    --bs-btn-border-color: rgb(49, 121, 165);
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-hover-border-color: rgb(49, 121, 165);
+    --bs-btn-focus-shadow-rgb: 108,117,125;
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: rgba(49, 121, 165, 0.641);
+    --bs-btn-active-border-color: rgb(49, 121, 165);
+}
