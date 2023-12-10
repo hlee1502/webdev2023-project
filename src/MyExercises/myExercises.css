@@ -1,0 +1,11 @@
+
+
+.delete-btn {
+    color: red;
+    cursor: pointer; 
+}
+
+.delete-btn:hover {
+    color: darkred; 
+}
+

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavBar from "../NavBar/navbar.js";
 import * as client from "../Users/client.js"; 
 import { TiDelete } from 'react-icons/ti';
+import './myExercises.css';
 
 function MyExercises() {
     const [likedExercises, setLikedExercises] = useState([]);
@@ -59,6 +60,7 @@ function MyExercises() {
             <NavBar/>
             <div className="container mt-4">
                 <h1>My Exercises</h1>
+                <hr className="header-divider"/> 
                 <input
                     type="text"
                     className="form-control mt-3 mb-3"
@@ -68,16 +70,18 @@ function MyExercises() {
                 />
                 {!loading && (
                     filteredExercises.length > 0 ? (
-                        <ul className="list-group">
-                            {filteredExercises.map((exercise, index) => (
-                                <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                                    {exercise}
-                                    <button className="btn" onClick={() => handleDelete(exercise)}>
-                                        <TiDelete />
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                    <ul className="list-group">
+                    {filteredExercises.map((exercise, index) => (
+                        <li key={index} className="list-group-item">
+                        <span className="exercise-text">{exercise}</span>
+                        <button className="btn delete-btn" onClick={() => handleDelete(exercise)}>
+                            <TiDelete size="1.5em" />
+                        </button>
+                        </li>
+                    ))}
+                    </ul>
+
+                      
                     ) : (
                         <p>{searchQuery ? 'No exercises found for your search.' : 'You don\'t have any liked exercises.'}</p>
                     )
