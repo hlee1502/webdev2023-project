@@ -72,4 +72,21 @@ export const signout = async () => {
     const response = await request.post(`${USERS_API}/signout`);
     return response.data;
 };
-  
+
+export const addLikedExercise = async (userId, exerciseId) => {
+    try {
+        const response = await request.post(`${USERS_API}/${userId}/like`, { exerciseId });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+
+export const removeLikedExercise = async (userId, exerciseId) => {
+    try {
+        const response = await request.post(`${USERS_API}/${userId}/unlike`, { exerciseId });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};

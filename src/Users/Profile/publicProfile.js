@@ -32,12 +32,25 @@ function PublicProfile() {
                 {profile ? (
                     <div className="public-profile-content">
                         <h1>{profile.username}'s Profile</h1>
-                        <p className="public-profile-info"><span className="public-profile-info-title">First Name:</span> {profile.firstName}</p>
-                        <p className="public-profile-info"><span className="public-profile-info-title">Last Name:</span> {profile.lastName}</p>
-                        <p className="public-profile-info"><span className="public-profile-info-title">Email:</span> {profile.email}</p>
-                        <p className="public-profile-info"><span className="public-profile-info-title">Date of Birth:</span> {profile.dob}</p>
-                        <div className="email-button-wrapper">
-                            <a href={`mailto:${profile.email}`} className="email-button">Send Email</a>
+                        <div className="profile-info-group">
+                            <p className="public-profile-info"><span className="public-profile-info-title">First Name:</span> {profile.firstName}</p>
+                            <p className="public-profile-info"><span className="public-profile-info-title">Last Name:</span> {profile.lastName}</p>
+                            <div className="email-and-button">
+                                <p className="public-profile-info"><span className="public-profile-info-title">Email:</span> {profile.email}</p>
+                                <a href={`mailto:${profile.email}`} className="email-button">Send Email</a>
+                            </div>
+                        </div>
+                        <div className="liked-exercises">
+                            <h2>Liked Exercises</h2>
+                            {profile.likedExercises && profile.likedExercises.length > 0 ? (
+                                <ul>
+                                    {profile.likedExercises.map((exercise, index) => (
+                                        <li key={index}>{exercise}</li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>No liked exercises.</p>
+                            )}
                         </div>
                     </div>
                 ) : (

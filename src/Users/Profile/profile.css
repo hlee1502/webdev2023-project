@@ -9,7 +9,7 @@
 .profile-page .form-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 600px;
     align-items: center;
     justify-content: center;
 }
@@ -18,7 +18,7 @@
     border: 1px solid #ddd;
     padding: 3%;
     border-radius: 8px; 
-    width: 35%;
+    width: 600px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -68,6 +68,7 @@
 .btn-update {
     background-color: #6f9f7a; 
     color: white;
+    margin-bottom: 10px;
 }
 
 .btn-update:hover {
@@ -78,6 +79,8 @@
 .btn-signout {
     background-color: rgb(49, 121, 165); 
     color: white;
+    margin-bottom: 10px;
+
 }
 
 .btn-signout:hover {

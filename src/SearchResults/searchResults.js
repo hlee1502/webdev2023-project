@@ -25,27 +25,79 @@ const determineSearchParam = (query) => {
 
 function SearchResults() {
   const [results, setResults] = useState([]);
-  const [isLiked, setLiked] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null); 
   const { query } = useParams(); 
   
   useEffect(() => {
-    const searchParam = determineSearchParam(query);
-    const fetchData = async () => {
-      try {
-          const externalResponse = await axios.get(`https://api.api-ninjas.com/v1/exercises?${searchParam}`, {
-            headers: { 'X-Api-Key': 'KdvVT7cA9sb4lgiqZy486w==qE7bwMX1zhQRnSmt' }
-          });
+    // Function to fetch current user data
+    async function fetchCurrentUser() {
+        try {
+            const userData = await client.account();
+            setCurrentUser(userData);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
+    }
 
-          const localResponse = await axios.post('http://localhost:4000/api/exercises', {name: query});
+    // Function to fetch exercise data
+    async function fetchData() {
+        try {
+            const searchParam = determineSearchParam(query);
+            const externalResponse = await axios.get(`https://api.api-ninjas.com/v1/exercises?${searchParam}`, {
+                headers: { 'X-Api-Key': 'KdvVT7cA9sb4lgiqZy486w==qE7bwMX1zhQRnSmt' }
+            });
+      
+            const localResponse = await axios.post('http://localhost:4000/api/exercises', { input: query });
+      
+            let combinedResults = [...externalResponse.data, ...localResponse.data];
+      
+            if (currentUser) {
+                combinedResults = combinedResults.map(exercise => ({
+                    ...exercise,
+                    liked: currentUser.likedExercises.includes(exercise.name)
+                }));
+            }
+      
+            setResults(combinedResults);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
 
-          setResults([...externalResponse.data, ...localResponse.data]);
-      } catch (error) {
-          console.error('Error fetching data:', error);
+    // Fetch user data first, then fetch exercise data
+    fetchCurrentUser().then(fetchData);
+  }, [query]); 
+
+
+  const toggleLike = async (exerciseName) => {
+    if (!currentUser) {
+      alert("You must be logged in to like or unlike exercises.");
+      return;
+    }
+
+    try {
+      const isLiked = currentUser.likedExercises.includes(exerciseName);
+      if (isLiked) {
+        await client.removeLikedExercise(currentUser._id, exerciseName);
+      } else {
+        await client.addLikedExercise(currentUser._id, exerciseName);
       }
-    };
+      const updatedLikedExercises = isLiked
+        ? currentUser.likedExercises.filter(e => e !== exerciseName)
+        : [...currentUser.likedExercises, exerciseName];
+      setCurrentUser({ ...currentUser, likedExercises: updatedLikedExercises });
 
-    fetchData();
-  }, [query]);
+      const updatedResults = results.map(exercise => {
+        if (exercise.name === exerciseName) {
+          return { ...exercise, liked: !isLiked };
+        }
+        return exercise;
+      });
+      setResults(updatedResults);
+    } catch (error) {
+      console.error("Error updating like state:", error);
+    }
+  };
 
   return (
     <div>
@@ -73,10 +125,10 @@ function SearchResults() {
                     </Link>
                   </div>
                   <div className='col-2 like-button'>
-                    <button className='btn btn-outline-secondary'>
-                      <FaRegHeart/>
-                    </button>
-                  </div>
+                  <button className='btn btn-outline-secondary' onClick={() => toggleLike(result.name)}>
+                    {currentUser && currentUser.likedExercises.includes(result.name) ? <FaHeart /> : <FaRegHeart />}
+                  </button>
+                </div>
                 </div>
               ))} 
             </ul>

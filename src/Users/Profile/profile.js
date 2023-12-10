@@ -107,7 +107,7 @@ function Profile() {
                     </div>
                 ) : (
                     <div>
-                        <h1>Please login</h1>
+                        <h1>Please login</h1><br></br>
                         <Link to="/Login" className="btn btn-primary">Go to Login</Link>
                     </div>
                 )}

@@ -16,7 +16,7 @@ function Login() {
     const signin = async () => {
         try {
             await client.signin(credentials);
-            navigate(`/Profile`);
+            navigate(`/Home`);
         } catch (error) {
             console.error("Login failed:", error.message);
         }

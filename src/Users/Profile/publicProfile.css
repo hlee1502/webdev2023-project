@@ -19,8 +19,7 @@
     width: 35%;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left
-    ;
+    text-align: left;
 }
 
 .public-profile-info {
@@ -35,15 +34,15 @@
     margin-right: 2%;
 }
 
-.email-button-wrapper {
-    text-align: center;
+.email-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
 .email-button {
-    display: inline-block;
     padding: 2% 4%;
-    margin-top: 4%;
     background-color: rgb(49, 121, 165);
     color: white;
     text-decoration: none;
@@ -54,4 +53,22 @@
 
 .email-button:hover {
     background-color: rgba(49, 121, 165, 0.9);
+}
+
+.liked-exercises {
+    margin-top: 5%;
+}
+
+.liked-exercises ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.liked-exercises li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.liked-exercises li:last-child {
+    border-bottom: none;
 }

@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.css';
-import logoImage from '../images/logo.png';
 import blueLogo from '../images/bluelogo.png'; 
 import { LuSearch } from "react-icons/lu";
-import { CiUser } from "react-icons/ci";
+import * as client from "../Users/client.js"; // Assuming client.js contains the account fetching logic
 
 function NavBar() {
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
     const navigate = useNavigate();
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const userData = await client.account();
+                setCurrentUser(userData);
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        };
+
+        fetchUserData();
+    }, []);
 
     const handleSearch = () => {
         const searchQuery = document.getElementById('searchBar').value;
@@ -30,9 +43,11 @@ function NavBar() {
                             <li className="nav-item">
                                 <Link to="/Home" className={`nav-link ${pathname.includes("/Home") ? "active" : ""}`}>Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/MyExercises" className={`nav-link ${pathname.includes("/MyExercises") ? "active" : ""}`}>My Exercises</Link>
-                            </li>
+                            {currentUser && (
+                                <li className="nav-item">
+                                    <Link to="/MyExercises" className={`nav-link ${pathname.includes("/MyExercises") ? "active" : ""}`}>My Exercises</Link>
+                                </li>
+                            )}
                             <li className="nav-item">
                                 <Link to="/Profile" className={`nav-link ${pathname.includes("/Profile") ? "active" : ""}`}>Profile</Link>
                             </li>
@@ -49,11 +64,11 @@ function NavBar() {
                             <button type="button" className="btn btn-primary d-flex align-items-center" onClick={handleSearch}><LuSearch/></button>
                         </div>
                     </div>
-                    {/* Other navbar elements */}
                 </div>
             </nav>
         </div>
     );
+    
     }    
 
 export default NavBar;
