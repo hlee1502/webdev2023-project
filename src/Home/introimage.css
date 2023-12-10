@@ -6,22 +6,46 @@
     color: white; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     padding-left: 5%;
-    padding-top: 8%;
+    position: relative;
 }
 
 .wd-image-title {
     font-size: 2.25rem;
     font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: row;
 }
 
 .wd-image-content {
     width: max-content;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
 }
 
 .wd-image-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+    .wd-image-heading {
+      display: none;
+    }
+}
+
+.wd-name {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .wd-name {
+      display: none;
+    }
 }
 
 .wd-welcome-message {

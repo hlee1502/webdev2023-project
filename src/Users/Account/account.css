@@ -23,9 +23,9 @@
 
 .wd-account .wd-form-border {
     border: 1px solid #ddd;
-    padding: 3% 4% 2%;
+    padding: 30px;
     border-radius: 8px; 
-    width: 35%;
+    width: 450px;
     margin-top: 3%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }

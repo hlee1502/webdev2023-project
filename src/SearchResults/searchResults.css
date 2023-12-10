@@ -3,16 +3,6 @@
   flex-wrap: wrap;
 }
 
-.result-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 280px;
-  margin: 10px;
-  height: 290px;
-}
-
 .result-link {
   text-decoration: none!important;
   color: black;
@@ -38,12 +28,12 @@
 }
 
 .results-divider {
-border-top: 2px solid; 
-color: rgb(49, 121, 165, 0.641);
-margin: 0 auto; 
-margin-right: 90%;
-margin-top: 15px;
-opacity: 1;
+  border-top: 2px solid; 
+  color: rgb(49, 121, 165, 0.641);
+  margin: 0 auto; 
+  margin-right: 90%;
+  margin-top: 15px;
+  opacity: 1;
 }
 
 .search-results{
@@ -81,7 +71,7 @@ padding-right: 2.5%;
   
 .results-container .list-group {
   --bs-list-group-border-color: none;
-  width: 45%;
+  width: 600px;
 }
 
 .wd-exercise-name {

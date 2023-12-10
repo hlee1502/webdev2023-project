@@ -31,8 +31,7 @@ function Home() {
             <NavBar/>
             <IntroImage user={user} />
             <div>
-            <PartnersList />
-
+                <PartnersList />
             </div>
         </div>
     );

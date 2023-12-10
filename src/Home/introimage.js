@@ -8,11 +8,11 @@ import { LuSearch } from "react-icons/lu";
 function IntroImage({ user }) {
     return(
         <div className="front-page mb-5" 
-            style={{ backgroundImage: `url(${introImage1})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '600px' }}>
+            style={{ backgroundImage: `url(${introImage1})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '80vh' }}>
             <div className='wd-image-content'>
                 <div className='wd-image-title'>
                         <img className='wd-image-logo' src={blueLogo} alt="Logo" style={{ width: '68px' }} /> 
-                        <span>Fitness Lab</span>
+                        <span className='wd-name'>Fitness Lab</span>
                 </div> 
                 <div className='wd-image-heading'>Your Workout Tracking Starts Here!</div>
                 {user && <div className='wd-welcome-message'>Welcome back {user.username}</div>}

@@ -100,3 +100,57 @@
 .wd-tabs {
     padding-left: 11%;
 }
+
+@media only screen and (max-width: 1200px) {
+    .wd-title {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .name-home {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .name-exercise {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .name-profile {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .name-login {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .icon-home {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .icon-exercise {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .icon-profile {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .icon-login {
+      display: none;
+    }
+}

@@ -16,7 +16,7 @@
     border: 1px solid #ddd;
     padding: 3%;
     border-radius: 8px;
-    width: 35%;
+    width: 450px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -31,7 +31,6 @@
 .public-profile-info-title {
     font-weight: bold;
     color: rgb(49, 121, 165);
-    margin-right: 2%;
 }
 
 .email-and-button {
@@ -49,6 +48,9 @@
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    width: max-content;
+    font-size: 0.8em;
+    margin-bottom: 2%;
 }
 
 .email-button:hover {

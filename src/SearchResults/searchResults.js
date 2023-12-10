@@ -125,10 +125,10 @@ function SearchResults() {
                     </Link>
                   </div>
                   <div className='col-2 like-button'>
-                  <button className='btn btn-outline-secondary' onClick={() => toggleLike(result.name)}>
-                    {currentUser && currentUser.likedExercises.includes(result.name) ? <FaHeart /> : <FaRegHeart />}
-                  </button>
-                </div>
+                    <button className='btn btn-outline-secondary' onClick={() => toggleLike(result.name)}>
+                      {currentUser && currentUser.likedExercises.includes(result.name) ? <FaHeart /> : <FaRegHeart />}
+                    </button>
+                  </div>
                 </div>
               ))} 
             </ul>

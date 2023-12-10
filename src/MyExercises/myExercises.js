@@ -58,32 +58,46 @@ function MyExercises() {
     return (
         <div>
             <NavBar/>
-            <div className="container mt-4">
-                <h1>My Exercises</h1>
-                <hr className="header-divider"/> 
-                <input
-                    type="text"
-                    className="form-control mt-3 mb-3"
-                    placeholder="Search exercises..."
-                    value={searchQuery}
-                    onChange={handleSearch}
-                />
+            <div className="my-exercises">
+                <div className='mt-4'>
+                    <h2>My Exercises</h2>
+                    <hr className="header-divider"/> 
+                </div>
+                <div className='search-bar'>
+                    <input
+                        type="text"
+                        className="form-control mt-3 mb-3"
+                        placeholder="Search exercises..."
+                        value={searchQuery}
+                        onChange={handleSearch}
+                    />
+                </div>
+                
                 {!loading && (
                     filteredExercises.length > 0 ? (
-                    <ul className="list-group">
-                    {filteredExercises.map((exercise, index) => (
-                        <li key={index} className="list-group-item">
-                        <span className="exercise-text">{exercise}</span>
-                        <button className="btn delete-btn" onClick={() => handleDelete(exercise)}>
-                            <TiDelete size="1.5em" />
-                        </button>
-                        </li>
-                    ))}
-                    </ul>
-
-                      
+                        <div className='my-exercises-container'>
+                            <ul className="list-group d-inline-block text-truncate">
+                                {filteredExercises.map((exercise, index) => (
+                                    <div className='row align-items-center'>
+                                        <div className='col-10'>
+                                            <li key={index} className="list-group-item">
+                                                <div className='text-truncate'>
+                                                    <span className="exercise-text">{exercise}</span>
+                                                </div>
+                                                <hr className="exercise-divider"/> 
+                                            </li>
+                                        </div>
+                                        <div className='col-2'>
+                                            <button className="btn delete-btn" onClick={() => handleDelete(exercise)}>
+                                                <TiDelete size="1.5em" />
+                                            </button> 
+                                        </div>
+                                    </div>  
+                                ))}
+                            </ul>
+                        </div>
                     ) : (
-                        <p>{searchQuery ? 'No exercises found for your search.' : 'You don\'t have any liked exercises.'}</p>
+                        <p className='no-exercise'>{searchQuery ? 'No exercises found for your search.' : 'You don\'t have any liked exercises.'}</p>
                     )
                 )}
             </div>

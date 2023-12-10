@@ -1,7 +1,27 @@
+.my-exercises {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
 
+.my-exercises-container {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-exercises-container .list-group {
+    --bs-list-group-border-color: none;
+    width: 600px;
+}
+
+.search-bar {
+    margin-left: 20px;
+    width:auto;
+}
 
 .delete-btn {
-    color: red;
+    color: #cf858e;
     cursor: pointer; 
 }
 
@@ -9,3 +29,20 @@
     color: darkred; 
 }
 
+.exercise-text {
+    font-size: 1.3em;
+}
+
+.exercise-divider {
+    border-top: 2px solid; 
+    color: rgb(49, 121, 165, 0.641);
+    margin: 0 auto; 
+    margin-right: 90%;
+    margin-top: 15px;
+    opacity: 1;
+}
+
+.no-exercise {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}

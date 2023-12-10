@@ -47,16 +47,7 @@ function Details() {
               <hr className="details-divider"/>
             </div>
             <div className="wd-exercise-info"> 
-              <div className="row">
-                <div className="col-10">
-                  <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
-                </div>
-                <div className="col-2 details-like-button">
-                  <button className='btn btn-outline-secondary'>
-                    <FaRegHeart/>
-                  </button>
-                </div>
-              </div>
+              <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
               <p><span className="wd-info-category">Muscle: </span>{exercise.muscle}</p>
               <p><span className="wd-info-category">Equipment: </span>{exercise.equipment}</p>
               <p><span className="wd-info-category">Difficulty: </span>{exercise.difficulty}</p>
