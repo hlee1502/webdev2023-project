@@ -37,8 +37,8 @@
 }
 
 .search-results{
-padding-left: 2.5%;
-padding-right: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 
 .no-results-message {
@@ -53,20 +53,20 @@ padding-right: 2.5%;
 }
 
 .no-results-message p {
-  margin: 5% 0;
+  margin: 10px 0;
   color: #333;
   font-size: 1em;
 }
 
 .no-results-message ul {
   list-style-type: disc;
-  margin: 5% 10%;
-  padding-left: 10%;
+  margin: 10px 20px;
+  padding-left: 20px;
   text-align: left;
 }
 
 .no-results-message li {
-  margin-bottom: 5%;
+  margin-bottom: 5px;
 }
   
 .results-container .list-group {

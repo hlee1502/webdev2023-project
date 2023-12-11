@@ -43,7 +43,7 @@ function NavBar() {
                             <img src={blueLogo} alt="Logo" style={{ width: '55px',}} /> 
                             <span className="wd-title">Fitness Lab</span>
                     </Link>                    
-                    <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+                    <div id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <Link to="/Home" className={`nav-link ${pathname.includes("/Home") ? "active" : ""}`}>
@@ -75,8 +75,8 @@ function NavBar() {
                     </div>
                     <div className="wd-home-end d-flex justify-content-end">
                         <div className="input-group">
-                            <div className="form-outline">
-                                <input type="search" id="searchBar" className="wd-search-bar form-control" placeholder="search exercises..."/>
+                            <div className="form-outline flex-grow-1">
+                                <input type="search" id="searchBar" className="wd-search-bar form-control text-truncate" placeholder="search exercises..."/>
                             </div>
                             <button type="button" className="btn btn-primary d-flex align-items-center" onClick={handleSearch}><LuSearch/></button>
                         </div>

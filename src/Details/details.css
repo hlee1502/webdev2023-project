@@ -14,7 +14,8 @@
     border: 1px solid rgb(49, 121, 165, 0.641);
     padding: 2%;
     border-radius: 8px; 
-    width: 50%;
+    min-width: 450px;
+    width: 50vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
@@ -34,4 +35,8 @@
     width: min-content;
     justify-content: end;
     flex-direction: row;
+}
+
+.wd-exercise-info .row {
+    flex-wrap: nowrap;
 }

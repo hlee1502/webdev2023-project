@@ -95,31 +95,36 @@ function Details() {
             <div className="wd-details-results">
                 {exercise ? (
                     <div className="wd-exercise-detail-page">
-                        <div className="mt-4 mb-3">
-                            <h3>{exercise.name}</h3>
-                            <hr className="details-divider" />
+                      <div className="mt-4 mb-3">
+                          <h3>{exercise.name}</h3>
+                          <hr className="details-divider" />
+                      </div>
+                      <div className="wd-exercise-info"> 
+                        <div className="row">
+                          <div className="col-10">
+                            <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
+                          </div>
+                          <div className="col-2 details-like-button d-flex justify-content-end">
+                            <button className='btn btn-outline-secondary like-btn' onClick={toggleLike}>
+                              {currentUser && currentUser.likedExercises.includes(name)
+                                ? <FaHeart size={20} />
+                                : <FaRegHeart size={20} />}
+                            </button>
+                          </div>
                         </div>
-                        <div className="wd-exercise-info"> 
-                      <p><span className="wd-info-category">Type: </span>{exercise.type}</p>
-                      <p><span className="wd-info-category">Muscle: </span>{exercise.muscle}</p>
-                      <p><span className="wd-info-category">Equipment: </span>{exercise.equipment}</p>
-                      <p><span className="wd-info-category">Difficulty: </span>{exercise.difficulty}</p>
-                      <p><span className="wd-info-category">Instructions: </span>{exercise.instructions}</p>
-                       <h4>Trainers who liked this exercise:</h4>
-                       <ul>
-                                {trainersWhoLiked.map((trainer, index) => (
-                                    <li key={index}>
-                                        <Link to={`/profile/${trainer.id}`}>{trainer.username}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                            <button className='btn like-btn' onClick={toggleLike}>
-                    {currentUser && currentUser.likedExercises.includes(name)
-                        ? <FaHeart size={24} />
-                        : <FaRegHeart size={24} />}
-                </button>
-                          
-                            </div> 
+                        <p><span className="wd-info-category">Muscle: </span>{exercise.muscle}</p>
+                        <p><span className="wd-info-category">Equipment: </span>{exercise.equipment}</p>
+                        <p><span className="wd-info-category">Difficulty: </span>{exercise.difficulty}</p>
+                        <p><span className="wd-info-category">Instructions: </span>{exercise.instructions}</p>
+                        <h4>Trainers who liked this exercise:</h4>
+                        <ul>
+                          {trainersWhoLiked.map((trainer, index) => (
+                              <li key={index}>
+                                  <Link to={`/profile/${trainer.id}`}>{trainer.username}</Link>
+                              </li>
+                          ))}
+                        </ul>
+                      </div> 
                       
                     </div>
                 ) : (

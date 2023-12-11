@@ -7,6 +7,10 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+.navbar-nav {
+    flex-direction: row;
+}
+
 .wd-navbar .navbar-nav .nav-link {
     font-size: 1.05rem;
     font-weight: 500;
@@ -21,7 +25,7 @@
     font-size: 1.05rem;
     color: white;
     background-color: rgba(49, 121, 165, 0.641);
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
@@ -35,13 +39,13 @@
     border-bottom-right-radius: 0;
 }
 
-.wd-search-bar {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 .wd-home-end {
     flex-direction: row;
+    margin-left: 0;
+}
+
+.wd-home-end .input-group {
+    flex-wrap: nowrap;
 }
 
 .wd-home-end .btn {
@@ -78,79 +82,78 @@
     font-family: 'Courier New', monospace;
 }
 
-.wd-login-button .btn {
-    --bs-btn-padding-x: 0.55rem;
-    --bs-btn-padding-y: 0.175rem;
-    --bs-btn-font-size: 0.95rem;
-    margin-left: 10px;
-    color: black;
-}
-
-.wd-profile-button .btn {
-    --bs-btn-padding-x: 0.55rem;
-    --bs-btn-padding-y: 0.175rem;
-    --bs-btn-font-size: 0.95rem;
-    color: black;
-}
-
-.wd-user-icon {
-    padding: 0;
-}
-
-.wd-tabs {
-    padding-left: 11%;
-}
-
 @media only screen and (max-width: 1200px) {
     .wd-title {
       display: none;
     }
-}
 
-@media only screen and (max-width: 1200px) {
     .name-home {
-      display: none;
+        display: none;
     }
-}
 
-@media only screen and (max-width: 1200px) {
     .name-exercise {
-      display: none;
+        display: none;
     }
-}
 
-@media only screen and (max-width: 1200px) {
     .name-profile {
-      display: none;
+        display: none;
+    }
+
+    .name-login {
+        display: none;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: center; 
+    }
+    
+    .navbar-nav .nav-item {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .navbar-toggler {
+        margin-right: 0.5rem; 
+    }
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+
+    .wd-navbar .navbar-nav .nav-link.active {
+        font-size: 1.05rem;
+        color: white;
+        background-color: rgba(49, 121, 165, 0.641);
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        width: max-content;
     }
 }
 
-@media only screen and (max-width: 1200px) {
-    .name-login {
-      display: none;
+@media only screen and (max-width: 600px) {
+    .input-group {
+        width: 40vw;
     }
 }
+
 
 @media only screen and (min-width: 1200px) {
     .icon-home {
       display: none;
     }
-}
 
-@media only screen and (min-width: 1200px) {
     .icon-exercise {
-      display: none;
+        display: none;
     }
-}
 
-@media only screen and (min-width: 1200px) {
     .icon-profile {
-      display: none;
+        display: none;
     }
-}
 
-@media only screen and (min-width: 1200px) {
     .icon-login {
-      display: none;
+        display: none;
     }
 }
